@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Audience Ka Reaction | Since 2022</title>
 
+  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="shortcut icon" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
-<meta name="theme-color" content="#ff0000">
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+  <link rel="shortcut icon" href="logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+  <meta name="theme-color" content="#ff0000">
+
   <style>
     * {
       margin: 0;
@@ -30,18 +35,18 @@
       padding: 20px 50px;
       position: fixed;
       width: 100%;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       backdrop-filter: blur(10px);
       z-index: 1000;
     }
 
     nav h1 {
       color: #ff0000;
-      font-size: 24px;
+      font-size: 22px;
     }
 
     nav span {
-      font-size: 12px;
+      font-size: 11px;
       color: #aaa;
       display: block;
     }
@@ -72,7 +77,7 @@
     }
 
     .hero h2 {
-      font-size: 60px;
+      font-size: 55px;
       font-weight: 700;
     }
 
@@ -107,11 +112,22 @@
       margin-bottom: 30px;
     }
 
-    /* FEATURED */
-    .featured iframe {
+    /* VIDEO WRAPPER (16:9 FIX) */
+    .video-wrapper {
+      position: relative;
       width: 100%;
-      height: 400px;
+      padding-top: 56.25%;
       border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     /* VIDEO GRID */
@@ -130,21 +146,32 @@
     }
 
     .card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-10px) scale(1.02);
     }
 
-    .card iframe {
-      width: 100%;
-      height: 180px;
-      border-radius: 10px;
+    .card h3 {
+      margin-top: 10px;
+      font-size: 16px;
     }
 
     /* ABOUT */
-    .about {
+    .about-section {
       text-align: center;
-      color: #ccc;
-      max-width: 700px;
+      max-width: 800px;
       margin: auto;
+      line-height: 1.7;
+      color: #ccc;
+    }
+
+    .about-section h1 {
+      color: #ff0000;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin-top: 15px;
+      text-align: left;
+      display: inline-block;
     }
 
     /* FOOTER */
@@ -188,26 +215,32 @@
   <section id="videos">
     <h2>🔥 Latest Reactions</h2>
 
-    <!-- FEATURED VIDEO -->
-    <div class="featured">
+    <!-- FEATURED -->
+    <div class="video-wrapper">
       <iframe src="https://www.youtube.com/embed/OTMxBgmpAq0" allowfullscreen></iframe>
     </div>
 
-    <!-- VIDEO GRID -->
+    <!-- GRID -->
     <div class="videos">
 
       <div class="card">
-        <iframe src="https://www.youtube.com/embed/OTMxBgmpAq0" allowfullscreen></iframe>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/OTMxBgmpAq0" allowfullscreen></iframe>
+        </div>
         <h3>🔥 Theatre Reaction</h3>
       </div>
 
       <div class="card">
-        <iframe src="https://www.youtube.com/embed/YebK3NqBoaw" allowfullscreen></iframe>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/YebK3NqBoaw" allowfullscreen></iframe>
+        </div>
         <h3>🏏 Crowd Madness</h3>
       </div>
 
       <div class="card">
-        <iframe src="https://www.youtube.com/embed/mFDjcPtl5gg" allowfullscreen></iframe>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/mFDjcPtl5gg" allowfullscreen></iframe>
+        </div>
         <h3>💥 Mass Moments</h3>
       </div>
 
@@ -215,45 +248,38 @@
   </section>
 
   <!-- ABOUT -->
-<section style="background:#0f0f0f; color:#fff; padding:40px; font-family:Poppins, sans-serif; line-height:1.6;">
+  <section id="about">
+    <div class="about-section">
+      <h1>Audience Ka Reaction 🎬</h1>
+      <p><small>Since 2022</small></p>
 
-  <h1 style="color:#ff0000; font-size:32px;">
-    Audience Ka Reaction 🎬
-  </h1>
+      <p style="margin-top:20px;">
+        This isn’t just a channel… it’s the sound of the crowd.
+      </p>
 
-  <p style="color:#aaa; font-size:14px;">Since 2022</p>
+      <p>
+        From theatre whistles 🔥 to stadium roars 🏏, we capture real reactions that make moments unforgettable.
+        No filters. No fake hype. Just raw audience energy.
+      </p>
 
-  <p style="margin-top:20px; font-size:18px;">
-    This isn’t just a channel… it’s the sound of the crowd.
-  </p>
+      <p>
+        If you’ve ever felt goosebumps during a mass entry or last-over finish… you already know why you're here.
+      </p>
 
-  <p>
-    From <b>theatre whistles 🔥</b> to <b>stadium roars 🏏</b>, we capture the real reactions 
-    that make moments unforgettable. No filters. No fake hype. Just raw audience energy.
-  </p>
+      <h3 style="margin-top:25px;">⚡ What You’ll Get:</h3>
+      <ul>
+        <li>🎬 Theatre Audience Reactions</li>
+        <li>🏏 Cricket Crowd Moments</li>
+        <li>🔥 Mass Entry & Climax Reactions</li>
+        <li>🎤 Live Event Energy</li>
+      </ul>
 
-  <p>
-    If you’ve ever felt goosebumps during a mass entry, last-over finish, or iconic scene…
-    you already know why you’re here.
-  </p>
+      <p style="margin-top:20px; color:#ff0000; font-weight:bold;">
+        👉 Subscribe & Experience Every Moment Like You’re In The Crowd
+      </p>
+    </div>
+  </section>
 
-  <h3 style="margin-top:30px;">⚡ What You’ll Get:</h3>
-  <ul>
-    <li>🎬 Theatre Audience Reactions</li>
-    <li>🏏 Cricket Match Crowd Moments</li>
-    <li>🔥 Mass Entry & Climax Reactions</li>
-    <li>🎤 Live Event Energy</li>
-  </ul>
-
-  <p style="margin-top:25px; font-size:18px;">
-    If you feel the hype… you belong here.
-  </p>
-
-  <p style="margin-top:20px; font-weight:bold; color:#ff0000; font-size:18px;">
-    👉 Subscribe & Experience Every Moment Like You’re In The Crowd
-  </p>
-
-</section>
   <!-- FOOTER -->
   <footer>
     <p>© 2026 Audience Ka Reaction | Since 2022</p>
