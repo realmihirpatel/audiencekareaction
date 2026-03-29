@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Audience Ka Reaction | Since 2022</title>
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Cinzel:wght@600&display=swap" rel="stylesheet">
 
   <!-- FAVICON -->
-  <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
-  <link rel="shortcut icon" href="logo.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
-  <meta name="theme-color" content="#ff0000">
+  <link rel="icon" type="image/png" href="logo.png">
 
   <style>
+    :root {
+      --black: #0d0d0d;
+      --red: #e50914;
+      --gold: #d4af37;
+      --white: #f5f5f5;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -24,8 +26,8 @@
     }
 
     body {
-      background: #0f0f0f;
-      color: #fff;
+      background: var(--black);
+      color: var(--white);
     }
 
     /* NAVBAR */
@@ -35,31 +37,31 @@
       padding: 20px 50px;
       position: fixed;
       width: 100%;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0,0,0,0.9);
       backdrop-filter: blur(10px);
       z-index: 1000;
     }
 
     nav h1 {
-      color: #ff0000;
-      font-size: 22px;
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 24px;
+      letter-spacing: 2px;
     }
 
     nav span {
       font-size: 11px;
       color: #aaa;
-      display: block;
     }
 
     nav a {
-      color: #fff;
+      color: var(--white);
       margin-left: 20px;
       text-decoration: none;
-      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #ff0000;
+      color: var(--gold);
     }
 
     /* HERO */
@@ -69,16 +71,16 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-        url('https://images.unsplash.com/photo-1517602302552-471fe67acf66');
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+        url('https://images.unsplash.com/photo-1505685296765-3a2736de412f');
       background-size: cover;
-      background-position: center;
-      padding: 20px;
     }
 
     .hero h2 {
-      font-size: 55px;
-      font-weight: 700;
+      font-family: 'Cinzel', serif;
+      font-size: 60px;
+      color: var(--gold);
+      text-shadow: 0 0 20px rgba(212,175,55,0.5);
     }
 
     .hero p {
@@ -87,91 +89,88 @@
     }
 
     .btn {
-      display: inline-block;
       margin-top: 25px;
       padding: 12px 30px;
-      background: #ff0000;
-      color: #fff;
+      background: var(--red);
       border-radius: 30px;
+      color: white;
       text-decoration: none;
       transition: 0.3s;
     }
 
     .btn:hover {
-      background: #cc0000;
+      background: #b20710;
       transform: scale(1.05);
     }
 
-    /* SECTION */
     section {
       padding: 80px 50px;
     }
 
     h2 {
       text-align: center;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
       margin-bottom: 30px;
     }
 
-    /* VIDEO WRAPPER (16:9 FIX) */
+    /* VIDEO */
     .video-wrapper {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
       border-radius: 15px;
       overflow: hidden;
+      box-shadow: 0 0 25px rgba(212,175,55,0.2);
     }
 
     .video-wrapper iframe {
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
+      top: 0;
+      left: 0;
       border: none;
     }
 
-    /* VIDEO GRID */
+    /* GRID */
     .videos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 25px;
       margin-top: 30px;
     }
 
     .card {
       background: #1a1a1a;
-      padding: 10px;
       border-radius: 15px;
+      padding: 10px;
       transition: 0.3s;
+      border: 1px solid rgba(212,175,55,0.2);
     }
 
     .card:hover {
-      transform: translateY(-10px) scale(1.02);
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(212,175,55,0.3);
     }
 
     .card h3 {
       margin-top: 10px;
-      font-size: 16px;
+      color: var(--gold);
     }
 
     /* ABOUT */
-    .about-section {
+    .about {
       text-align: center;
       max-width: 800px;
       margin: auto;
-      line-height: 1.7;
       color: #ccc;
+      line-height: 1.7;
     }
 
-    .about-section h1 {
-      color: #ff0000;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      margin-top: 15px;
-      text-align: left;
-      display: inline-block;
+    .about h1 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
     }
 
     /* FOOTER */
@@ -180,7 +179,6 @@
       padding: 20px;
       background: #000;
       color: #777;
-      margin-top: 40px;
     }
 
   </style>
@@ -188,13 +186,12 @@
 
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAV -->
   <nav>
     <div>
       <h1>Audience Ka Reaction</h1>
       <span>Since 2022</span>
     </div>
-
     <div>
       <a href="#">Home</a>
       <a href="#videos">Videos</a>
@@ -205,84 +202,69 @@
   <!-- HERO -->
   <div class="hero">
     <div>
-      <h2>Feel The Crowd 🔥</h2>
-      <p>Real Theatre & Stadium Reactions</p>
-      <a href="https://youtube.com" target="_blank" class="btn">Watch on YouTube</a>
+      <h2>Lights. Camera. Reaction.</h2>
+      <p>Feel Every Whistle. Every Cheer. Every Goosebump.</p>
+      <a href="#" class="btn">Enter The Experience</a>
     </div>
   </div>
 
   <!-- VIDEOS -->
   <section id="videos">
-    <h2>🔥 Latest Reactions</h2>
+    <h2>🎬 Featured Show</h2>
 
-    <!-- FEATURED -->
     <div class="video-wrapper">
       <iframe src="https://www.youtube.com/embed/OTMxBgmpAq0" allowfullscreen></iframe>
     </div>
 
-    <!-- GRID -->
     <div class="videos">
-
       <div class="card">
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/OTMxBgmpAq0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/OTMxBgmpAq0"></iframe>
         </div>
-        <h3>🔥 Theatre Reaction</h3>
+        <h3>🔥 Theatre Madness</h3>
       </div>
 
       <div class="card">
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/YebK3NqBoaw" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/YebK3NqBoaw"></iframe>
         </div>
-        <h3>🏏 Crowd Madness</h3>
+        <h3>🏏 Stadium Roar</h3>
       </div>
 
       <div class="card">
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/mFDjcPtl5gg" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/mFDjcPtl5gg"></iframe>
         </div>
-        <h3>💥 Mass Moments</h3>
+        <h3>💥 Mass Entry</h3>
       </div>
-
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="about-section">
+    <div class="about">
       <h1>Audience Ka Reaction 🎬</h1>
-      <p><small>Since 2022</small></p>
+      <p>Since 2022</p>
 
-      <p style="margin-top:20px;">
-        This isn’t just a channel… it’s the sound of the crowd.
+      <p>
+        In every theatre, there’s a story beyond the screen.  
+        We capture that story — the whistles, the claps, the madness.
       </p>
 
       <p>
-        From theatre whistles 🔥 to stadium roars 🏏, we capture real reactions that make moments unforgettable.
-        No filters. No fake hype. Just raw audience energy.
+        From Bollywood blockbusters to cricket finals,  
+        we bring you the heartbeat of the audience.
       </p>
 
-      <p>
-        If you’ve ever felt goosebumps during a mass entry or last-over finish… you already know why you're here.
-      </p>
-
-      <h3 style="margin-top:25px;">⚡ What You’ll Get:</h3>
-      <ul>
-        <li>🎬 Theatre Audience Reactions</li>
-        <li>🏏 Cricket Crowd Moments</li>
-        <li>🔥 Mass Entry & Climax Reactions</li>
-        <li>🎤 Live Event Energy</li>
-      </ul>
-
-      <p style="margin-top:20px; color:#ff0000; font-weight:bold;">
-        👉 Subscribe & Experience Every Moment Like You’re In The Crowd
+      <p style="color:#d4af37; margin-top:20px;">
+        👉 This isn’t content. This is an experience.
       </p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 Audience Ka Reaction | Since 2022</p>
+    © 2026 Audience Ka Reaction | Since 2022
   </footer>
 
 </body>
