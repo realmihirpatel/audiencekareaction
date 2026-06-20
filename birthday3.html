@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Birthday Chapter 3 ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
@@ -15,6 +16,10 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#0b1020,#1c1338,#47205d,#6d1e4f);
@@ -24,10 +29,64 @@ justify-content:center;
 align-items:center;
 padding:20px;
 overflow-x:hidden;
+position:relative;
 }
 
+/* Background Glow */
+
+body::before{
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+background:#ff5ea8;
+filter:blur(250px);
+opacity:.15;
+top:-250px;
+left:-150px;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:#7c5cff;
+filter:blur(220px);
+opacity:.15;
+bottom:-250px;
+right:-150px;
+}
+
+/* Floating Hearts */
+
+.heart{
+position:absolute;
+font-size:28px;
+animation:float 5s ease-in-out infinite;
+opacity:.8;
+}
+
+.h1{top:8%;left:8%;}
+.h2{top:15%;right:10%;animation-delay:1s;}
+.h3{bottom:15%;left:12%;animation-delay:2s;}
+.h4{bottom:8%;right:15%;animation-delay:3s;}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-20px);
+}
+}
+
+/* Card */
+
 .card{
-width:min(1200px,100%);
+position:relative;
+z-index:2;
+width:min(1250px,100%);
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(18px);
 border:1px solid rgba(255,255,255,.12);
@@ -37,12 +96,11 @@ display:flex;
 box-shadow:0 25px 60px rgba(0,0,0,.45);
 }
 
-.left,.right{
-flex:1;
-padding:50px;
-}
+/* Left Section */
 
 .left{
+flex:1;
+padding:50px;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -51,95 +109,108 @@ justify-content:center;
 .tag{
 display:inline-block;
 padding:10px 18px;
-border-radius:50px;
+border-radius:999px;
 background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.1);
 color:white;
+font-size:14px;
 margin-bottom:20px;
 width:max-content;
 }
 
 h1{
-font-size:clamp(3rem,6vw,5rem);
+font-size:clamp(3rem,6vw,5.5rem);
 line-height:1;
 color:white;
 margin-bottom:20px;
 }
 
-.highlight{
+.name{
 font-family:'Dancing Script',cursive;
 color:#ff8bc2;
 }
 
 .subtitle{
-font-size:1.15rem;
+font-size:1.2rem;
 color:#ffd8ea;
 margin-bottom:30px;
 }
 
-.reason{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-padding:18px;
-border-radius:18px;
-margin-bottom:15px;
-transition:.3s;
-}
-
-.reason:hover{
-transform:translateY(-3px);
-}
-
-.reason h3{
-color:#ffd166;
-margin-bottom:8px;
-}
-
-.reason p{
-color:white;
-line-height:1.8;
-font-size:15px;
-}
-
 .final-message{
-margin-top:20px;
-padding:20px;
 background:rgba(255,255,255,.05);
-border-radius:20px;
 border:1px solid rgba(255,255,255,.1);
+padding:25px;
+border-radius:20px;
+max-height:550px;
+overflow-y:auto;
+}
+
+.final-message::-webkit-scrollbar{
+width:6px;
+}
+
+.final-message::-webkit-scrollbar-thumb{
+background:#ff77b7;
+border-radius:20px;
+}
+
+.final-message p{
 color:white;
-line-height:1.9;
+line-height:2;
+margin-bottom:14px;
+font-size:15px;
 }
 
 .btn{
 margin-top:25px;
 display:inline-flex;
+justify-content:center;
+align-items:center;
 padding:16px 30px;
-background:linear-gradient(135deg,#ff4f9a,#ff7b54);
+background:linear-gradient(
+135deg,
+#ff4f9a,
+#ff7b54
+);
 border-radius:50px;
 text-decoration:none;
 color:white;
 font-weight:600;
+transition:.4s;
 width:max-content;
 }
 
+.btn:hover{
+transform:translateY(-4px);
+}
+
+/* Right Section */
+
 .right{
+flex:1;
 display:flex;
 justify-content:center;
 align-items:center;
+padding:40px;
+}
+
+.image-wrapper{
+text-align:center;
 }
 
 .image-box{
 width:min(100%,420px);
 aspect-ratio:4/5;
 overflow:hidden;
-border-radius:25px;
-box-shadow:0 20px 50px rgba(0,0,0,.4);
+border-radius:28px;
+box-shadow:0 20px 50px rgba(0,0,0,.45);
 }
 
 .image-box img{
 width:100%;
 height:100%;
 object-fit:cover;
+display:block;
 transition:.8s;
 }
 
@@ -148,18 +219,21 @@ transform:scale(1.08);
 }
 
 .caption{
-text-align:center;
-margin-top:15px;
+margin-top:18px;
 color:white;
-font-size:17px;
+font-size:18px;
 }
 
 .quote{
-text-align:center;
 margin-top:10px;
 font-style:italic;
 color:rgba(255,255,255,.75);
+max-width:350px;
+margin-left:auto;
+margin-right:auto;
 }
+
+/* Mobile */
 
 @media(max-width:1024px){
 
@@ -170,6 +244,7 @@ flex-direction:column;
 .left{
 order:2;
 text-align:center;
+align-items:center;
 }
 
 .right{
@@ -179,6 +254,10 @@ order:1;
 }
 
 @media(max-width:768px){
+
+body{
+padding:15px;
+}
 
 .left,.right{
 padding:25px;
@@ -190,7 +269,10 @@ width:min(85vw,320px);
 
 .btn{
 width:100%;
-justify-content:center;
+}
+
+.final-message{
+max-height:none;
 }
 
 }
@@ -199,6 +281,11 @@ justify-content:center;
 </head>
 
 <body>
+
+<div class="heart h1">❤️</div>
+<div class="heart h2">💖</div>
+<div class="heart h3">✨</div>
+<div class="heart h4">🌹</div>
 
 <div class="card">
 
@@ -209,56 +296,144 @@ justify-content:center;
 </div>
 
 <h1>
-Why I Fell
-<span class="highlight">For You</span>
+When I Started
+<span class="name">Falling For You</span>
 </h1>
 
 <p class="subtitle">
-It wasn't one moment. It was a thousand little things.
+I never planned it. It just happened...
 </p>
-
-<div class="reason">
-<h3>😊 Your Smile</h3>
-<p>
-Your smile has a way of making everything feel okay, even on the worst days.
-</p>
-</div>
-
-<div class="reason">
-<h3>💬 Our Conversations</h3>
-<p>
-Talking to you never felt like a task. Somehow hours felt like minutes.
-</p>
-</div>
-
-<div class="reason">
-<h3>❤️ The Way You Care</h3>
-<p>
-You may not even realize it, but your kindness and care mean more than words can explain.
-</p>
-</div>
-
-<div class="reason">
-<h3>✨ Being Yourself</h3>
-<p>
-I didn't fall for a perfect person. I fell for you. Exactly as you are.
-</p>
-</div>
 
 <div class="final-message">
-Somewhere along the way, you stopped being just someone I talked to.
 
-You became the first person I wanted to share things with.
+<h3 style="color:#ffd166;margin-bottom:15px;">
+❤️ When Things Started Changing
+</h3>
 
-The first person I wanted to tell good news to.
+<p>
+As the days passed, something started changing inside me.
+</p>
 
-The person who could make me smile without even trying.
+<p>
+At first, I couldn't even understand what it was.
+</p>
 
-And that's when I realized...
+<p>
+Was it friendship?
+Was it something more?
+Was it romantic?
+Was it bromantic?
+Or was it just me overthinking everything?
+</p>
 
-I wasn't just talking to you anymore.
+<p>
+Honestly...
+I had no idea.
+</p>
 
-I was falling for you. ❤️
+<p>
+All I knew was that I started caring about you more than I cared about most people.
+</p>
+
+<p>
+Your happiness mattered to me.
+Your bad days affected me.
+Your achievements made me genuinely happy.
+</p>
+
+<p>
+And somehow, without realizing it,
+I became a little possessive too.
+</p>
+
+<p>
+Not because I wanted to control you.
+But because you had become important to me.
+Very important.
+</p>
+
+<p>
+I always wanted to know if you were okay.
+I always wanted to be there when you needed someone.
+</p>
+
+<p>
+And if there was anything I could do to make you smile,
+I would probably do it without thinking twice.
+</p>
+
+<p>
+And yes...
+there is something I need to confess.
+</p>
+
+<p>
+I get jealous.
+</p>
+
+<p>
+Way more than I pretend to.
+</p>
+
+<p>
+Whenever some random guy starts falling for you,
+a tiny voice inside my head immediately goes:
+</p>
+
+<p style="color:#ff9bc8;font-weight:600;">
+"HELLOOO??? 😭<br>
+Excuse me?<br>
+Can we talk about this for a second?"
+</p>
+
+<p>
+Sometimes I genuinely wonder...
+</p>
+
+<p>
+Do you really not notice me getting jealous?
+</p>
+
+<p>
+Because I thought I was making it pretty obvious.
+</p>
+
+<p>
+I mean...
+why are you out there making random boys fall for you
+when I'm already trying my best to be your favourite person? ❤️
+</p>
+
+<p>
+But even with all the teasing,
+all the jealousy,
+all the overthinking,
+and all these emotions...
+</p>
+
+<p style="color:#ffd166;font-weight:600;">
+The truth is simple.
+</p>
+
+<p>
+I care about you.
+More than I expected to.
+More than I planned to.
+And definitely more than I can put into words.
+</p>
+
+<p style="margin-top:20px;font-size:18px;font-weight:600;color:#ff8bc2;">
+Somewhere between random messages,
+late-night conversations,
+silly arguments,
+stupid jokes,
+and countless memories...
+</p>
+
+<p style="font-size:22px;font-weight:700;color:white;">
+I fell for you. ❤️
+</p>
+
 </div>
 
 <a href="birthday4.html" class="btn">
@@ -269,18 +444,18 @@ Our Beautiful Memories ➜
 
 <div class="right">
 
-<div>
+<div class="image-wrapper">
 
 <div class="image-box">
-<img src="Image3.jpg" alt="Why I Fell For You">
+<img src="Image3.jpg" alt="When I Started Falling For You">
 </div>
 
 <div class="caption">
-Every little thing about you became special ❤️
+The girl who slowly became my favourite person ❤️
 </div>
 
 <div class="quote">
-"You became my favourite notification."
+"Some feelings arrive quietly... and then become everything."
 </div>
 
 </div>
