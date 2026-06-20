@@ -1,282 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Birthday 1</title>
-  <style>
-    :root {
-      --bg1: #120f1f;
-      --bg2: #1f1633;
-      --card: rgba(255, 255, 255, 0.10);
-      --card-border: rgba(255, 255, 255, 0.18);
-      --text: #ffffff;
-      --muted: rgba(255, 255, 255, 0.78);
-      --accent: #ff5fa2;
-      --accent2: #ffd166;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      font-family: Inter, Poppins, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top, rgba(255, 95, 162, 0.18), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(255, 209, 102, 0.14), transparent 28%),
-        linear-gradient(135deg, var(--bg1), var(--bg2));
-    }
+<style>
 
-    .stars {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        radial-gradient(2px 2px at 20% 25%, rgba(255,255,255,0.9) 40%, transparent 41%),
-        radial-gradient(1.5px 1.5px at 70% 18%, rgba(255,255,255,0.85) 40%, transparent 41%),
-        radial-gradient(1.8px 1.8px at 85% 65%, rgba(255,255,255,0.8) 40%, transparent 41%),
-        radial-gradient(1.5px 1.5px at 15% 78%, rgba(255,255,255,0.8) 40%, transparent 41%),
-        radial-gradient(2px 2px at 45% 82%, rgba(255,255,255,0.75) 40%, transparent 41%);
-      opacity: 0.7;
-      animation: twinkle 4s ease-in-out infinite alternate;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-    @keyframes twinkle {
-      from { opacity: 0.45; }
-      to { opacity: 0.95; }
-    }
+body{
+height:100vh;
+background:linear-gradient(
+135deg,
+#0f172a,
+#1e1b4b,
+#4c1d95,
+#831843
+);
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
 
-    .container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
+body::before{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:#ff4d8d;
+filter:blur(250px);
+opacity:.25;
+top:-200px;
+right:-100px;
+}
 
-    .card {
-      width: min(980px, 100%);
-      min-height: min(720px, 92vh);
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 20px;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(18px);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
+body::after{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:#8b5cf6;
+filter:blur(220px);
+opacity:.25;
+bottom:-200px;
+left:-100px;
+}
 
-    .left, .right {
-      padding: 34px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+.card{
+width:90%;
+max-width:1100px;
+height:80vh;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:30px;
+display:flex;
+overflow:hidden;
+box-shadow:0 25px 50px rgba(0,0,0,.4);
+z-index:10;
+}
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      color: var(--muted);
-      font-size: 14px;
-      letter-spacing: 0.2px;
-      margin-bottom: 18px;
-    }
+.left{
+flex:1;
+padding:60px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
 
-    h1 {
-      font-size: clamp(42px, 7vw, 74px);
-      line-height: 0.95;
-      margin-bottom: 18px;
-      text-wrap: balance;
-    }
+.right{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+position:relative;
+}
 
-    .highlight {
-      color: var(--accent2);
-      text-shadow: 0 0 24px rgba(255, 209, 102, 0.25);
-    }
+.tag{
+display:inline-block;
+padding:10px 20px;
+border-radius:50px;
+background:rgba(255,255,255,.1);
+color:#fff;
+font-size:14px;
+margin-bottom:25px;
+width:max-content;
+}
 
-    .message {
-      font-size: clamp(16px, 2vw, 20px);
-      line-height: 1.8;
-      color: var(--muted);
-      max-width: 560px;
-      margin-bottom: 28px;
-    }
+h1{
+font-size:65px;
+line-height:1;
+color:white;
+margin-bottom:20px;
+}
 
-    .love-line {
-      font-size: clamp(18px, 2.2vw, 24px);
-      line-height: 1.7;
-      color: white;
-      margin-bottom: 28px;
-      font-weight: 600;
-    }
+.name{
+color:#ff7eb3;
+font-family:'Dancing Script',cursive;
+}
 
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+.subtitle{
+font-size:22px;
+color:#ffd6e8;
+margin-bottom:25px;
+}
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 22px;
-      border-radius: 14px;
-      border: none;
-      text-decoration: none;
-      font-weight: 700;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-      cursor: pointer;
-      user-select: none;
-    }
+.text{
+color:rgba(255,255,255,.85);
+line-height:1.9;
+font-size:17px;
+max-width:520px;
+}
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+.love{
+margin-top:25px;
+padding:20px;
+background:rgba(255,255,255,.06);
+border-radius:20px;
+border:1px solid rgba(255,255,255,.1);
+color:white;
+font-style:italic;
+}
 
-    .primary {
-      background: linear-gradient(135deg, #ff5fa2, #ff7b54);
-      color: white;
-      box-shadow: 0 12px 30px rgba(255, 95, 162, 0.28);
-    }
+.btn{
+margin-top:30px;
+display:inline-block;
+padding:16px 32px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+background:linear-gradient(
+135deg,
+#ff4d8d,
+#ff8a65
+);
+color:white;
+transition:.4s;
+width:max-content;
+}
 
-    .ghost {
-      background: rgba(255, 255, 255, 0.08);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-    }
+.btn:hover{
+transform:translateY(-4px) scale(1.03);
+}
 
-    .right {
-      position: relative;
-      background:
-        linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent 55%),
-        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      align-items: center;
-      text-align: center;
-    }
+.image-box{
+width:370px;
+height:500px;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+position:relative;
+}
 
-    .photo-frame {
-      width: min(100%, 360px);
-      aspect-ratio: 4 / 5;
-      border-radius: 26px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.18);
-      box-shadow: 0 18px 48px rgba(0,0,0,0.35);
-      background: rgba(255,255,255,0.08);
-      position: relative;
-    }
+.image-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.6s;
+}
 
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+.image-box:hover img{
+transform:scale(1.08);
+}
 
-    .photo-caption {
-      margin-top: 18px;
-      font-size: 14px;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.72);
-    }
+.caption{
+margin-top:15px;
+color:white;
+text-align:center;
+font-size:16px;
+}
 
-    .heart {
-      position: absolute;
-      font-size: 20px;
-      opacity: 0.9;
-      animation: float 5s ease-in-out infinite;
-      pointer-events: none;
-      filter: drop-shadow(0 0 10px rgba(255,95,162,0.5));
-    }
+.heart{
+position:absolute;
+font-size:30px;
+animation:float 4s ease-in-out infinite;
+}
 
-    .h1 { top: 8%; left: 10%; animation-delay: 0s; }
-    .h2 { top: 16%; right: 12%; animation-delay: 1s; }
-    .h3 { bottom: 14%; left: 14%; animation-delay: 2s; }
-    .h4 { bottom: 10%; right: 18%; animation-delay: 3s; }
+.h1{
+top:10%;
+left:10%;
+}
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-14px) rotate(8deg); }
-    }
+.h2{
+top:20%;
+right:10%;
+animation-delay:1s;
+}
 
-    .footer-note {
-      margin-top: 20px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.55);
-    }
+.h3{
+bottom:15%;
+left:15%;
+animation-delay:2s;
+}
 
-    @media (max-width: 860px) {
-      html, body { overflow: auto; }
-      .card {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-      .left, .right {
-        padding: 26px;
-      }
-      h1 { font-size: clamp(36px, 10vw, 58px); }
-      .photo-frame { width: min(100%, 320px); }
-    }
-  </style>
+.h4{
+bottom:10%;
+right:20%;
+animation-delay:3s;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-20px);
+}
+}
+
+@media(max-width:900px){
+
+.card{
+flex-direction:column;
+height:auto;
+margin:20px;
+}
+
+.left{
+padding:35px;
+}
+
+.right{
+padding-bottom:40px;
+}
+
+h1{
+font-size:45px;
+}
+
+.image-box{
+width:280px;
+height:380px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-  <div class="stars"></div>
 
-  <div class="container">
-    <div class="card">
-      <section class="left">
-        <div class="badge">🎂 Birthday 1 • Opening Page</div>
-        <h1>Happy Birthday, <span class="highlight">My Love</span> ❤️</h1>
-        <p class="message">
-          Today is not just your birthday. It is the day the world became brighter,
-          softer, and a lot more beautiful — because you were born.
-        </p>
-        <p class="love-line">
-          I love you more than words can hold, more than silence can hide,
-          and more than time can ever erase.
-        </p>
-        <div class="buttons">
-          <a class="btn primary" href="birthday2.html">Continue ➜</a>
-          <button class="btn ghost" onclick="document.getElementById('bgMusic').play()">Play Music ♪</button>
-        </div>
-        <div class="footer-note">Made with love, just for you.</div>
-      </section>
+<div class="card">
 
-      <section class="right">
-        <div class="heart h1">💖</div>
-        <div class="heart h2">✨</div>
-        <div class="heart h3">💫</div>
-        <div class="heart h4">❤️</div>
+<div class="left">
 
-        <div class="photo-frame">
-          <img src="Image1" alt="Birthday Photo 1" />
-        </div>
-        <div class="photo-caption">Image 1 • My favorite view</div>
-      </section>
-    </div>
-  </div>
+<div class="tag">
+🎂 Birthday Chapter 1
+</div>
 
-  <audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mpeg" />
-  </audio>
+<h1>
+Happy Birthday<br>
+<span class="name">My Love ❤️</span>
+</h1>
+
+<p class="subtitle">
+Today is my favorite day of the year.
+</p>
+
+<p class="text">
+Because today is the day the most beautiful girl came into this world.
+The girl who makes my heart smile, my days brighter, and my life more meaningful.
+</p>
+
+<div class="love">
+"If I could give you one thing in life,
+it would be the ability to see yourself through my eyes.
+Then you would know how truly special you are."
+</div>
+
+<a href="birthday2.html" class="btn">
+Begin Our Story ➜
+</a>
+
+</div>
+
+<div class="right">
+
+<div class="heart h1">❤️</div>
+<div class="heart h2">✨</div>
+<div class="heart h3">💖</div>
+<div class="heart h4">🌹</div>
+
+<div>
+<div class="image-box">
+<img src="Image1.jpg" alt="My Love">
+</div>
+
+<div class="caption">
+The girl who changed my world ❤️
+</div>
+</div>
+
+</div>
+
+</div>
+
 </body>
 </html>
