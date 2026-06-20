@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Day Everything Changed ❤️</title>
+<title>Birthday 2 - The Day Everything Changed ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
@@ -21,56 +21,82 @@ font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#080b18,#17152f,#38184f,#5f183f);
 min-height:100dvh;
 overflow-x:hidden;
+padding:20px;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:20px;
 position:relative;
 }
+
+/* Background Glow */
 
 body::before{
 content:"";
 position:absolute;
-width:600px;
-height:600px;
+width:700px;
+height:700px;
 background:#ff5ea8;
 filter:blur(250px);
 opacity:.15;
 top:-250px;
-left:-150px;
+left:-200px;
 }
 
 body::after{
 content:"";
 position:absolute;
-width:500px;
-height:500px;
+width:600px;
+height:600px;
 background:#7c5cff;
 filter:blur(220px);
 opacity:.15;
-bottom:-200px;
-right:-100px;
+bottom:-250px;
+right:-200px;
 }
 
+/* Floating Hearts */
+
+.heart{
+position:absolute;
+font-size:30px;
+animation:float 5s ease-in-out infinite;
+opacity:.8;
+}
+
+.h1{top:8%;left:8%;}
+.h2{top:15%;right:10%;animation-delay:1s;}
+.h3{bottom:15%;left:12%;animation-delay:2s;}
+.h4{bottom:8%;right:15%;animation-delay:3s;}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-20px);
+}
+}
+
+/* Main Card */
+
 .card{
-width:min(1200px,100%);
+position:relative;
+z-index:2;
+width:min(1250px,100%);
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.1);
+border:1px solid rgba(255,255,255,.12);
 border-radius:30px;
 overflow:hidden;
 display:flex;
-box-shadow:0 25px 50px rgba(0,0,0,.45);
-position:relative;
-z-index:2;
+box-shadow:0 25px 60px rgba(0,0,0,.45);
 }
 
-.left,.right{
-flex:1;
-padding:50px;
-}
+/* Left Section */
 
 .left{
+flex:1;
+padding:50px;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -79,15 +105,17 @@ justify-content:center;
 .tag{
 display:inline-block;
 padding:10px 18px;
-border-radius:50px;
+border-radius:999px;
 background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.1);
 color:white;
+font-size:14px;
 margin-bottom:20px;
 width:max-content;
 }
 
 h1{
-font-size:clamp(3rem,6vw,5rem);
+font-size:clamp(3rem,6vw,5.5rem);
 line-height:1;
 color:white;
 margin-bottom:20px;
@@ -98,79 +126,122 @@ font-family:'Dancing Script',cursive;
 color:#ff7eb3;
 }
 
-.story{
-color:rgba(255,255,255,.88);
-line-height:2;
-font-size:1.05rem;
-margin-bottom:30px;
+.story-intro{
+color:#ffd8eb;
+font-size:1.2rem;
+margin-bottom:25px;
 }
 
 .memory-box{
 background:rgba(255,255,255,.05);
 border:1px solid rgba(255,255,255,.1);
-padding:20px;
 border-radius:20px;
+padding:25px;
 margin-bottom:25px;
+max-height:420px;
+overflow-y:auto;
+}
+
+.memory-box::-webkit-scrollbar{
+width:6px;
+}
+
+.memory-box::-webkit-scrollbar-thumb{
+background:#ff77b7;
+border-radius:20px;
 }
 
 .memory-box h3{
 color:#ffd166;
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
 .memory-box p{
 color:white;
-line-height:1.8;
+line-height:2;
+margin-bottom:15px;
+font-size:15px;
+}
+
+.highlight{
+color:#ffd166;
+font-weight:600;
 }
 
 .timeline{
 border-left:3px solid #ff77b7;
 padding-left:20px;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
 .timeline div{
-margin-bottom:15px;
 color:white;
+margin-bottom:12px;
+position:relative;
+}
+
+.timeline div::before{
+content:"";
+width:12px;
+height:12px;
+background:#ff77b7;
+border-radius:50%;
+position:absolute;
+left:-27px;
+top:6px;
 }
 
 .btn{
 display:inline-flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 padding:16px 30px;
-background:linear-gradient(135deg,#ff4f9a,#ff7b54);
 border-radius:50px;
-text-decoration:none;
+background:linear-gradient(
+135deg,
+#ff4f9a,
+#ff7b54
+);
 color:white;
+text-decoration:none;
 font-weight:600;
 transition:.4s;
 width:max-content;
 }
 
 .btn:hover{
-transform:translateY(-4px);
+transform:translateY(-4px) scale(1.03);
 }
 
+/* Right Section */
+
 .right{
+flex:1;
 display:flex;
 justify-content:center;
 align-items:center;
+padding:40px;
+}
+
+.image-wrapper{
+text-align:center;
 }
 
 .image-box{
 width:min(100%,420px);
 aspect-ratio:4/5;
 overflow:hidden;
-border-radius:25px;
-box-shadow:0 20px 40px rgba(0,0,0,.45);
+border-radius:28px;
+box-shadow:0 20px 50px rgba(0,0,0,.45);
+position:relative;
 }
 
 .image-box img{
 width:100%;
 height:100%;
 object-fit:cover;
-transition:.7s;
+display:block;
+transition:.8s;
 }
 
 .image-box:hover img{
@@ -178,17 +249,21 @@ transform:scale(1.08);
 }
 
 .caption{
-text-align:center;
-margin-top:15px;
+margin-top:18px;
 color:white;
+font-size:18px;
 }
 
 .quote{
-text-align:center;
 margin-top:10px;
 font-style:italic;
 color:rgba(255,255,255,.75);
+max-width:350px;
+margin-left:auto;
+margin-right:auto;
 }
+
+/* Mobile Responsive */
 
 @media(max-width:1024px){
 
@@ -199,6 +274,7 @@ flex-direction:column;
 .left{
 order:2;
 text-align:center;
+align-items:center;
 }
 
 .right{
@@ -207,22 +283,39 @@ order:1;
 
 .timeline{
 text-align:left;
+width:100%;
 }
 
 }
 
 @media(max-width:768px){
 
+body{
+padding:15px;
+}
+
 .left,.right{
 padding:25px;
+}
+
+.memory-box{
+max-height:none;
+}
+
+.image-box{
+width:min(85vw,320px);
 }
 
 .btn{
 width:100%;
 }
 
-.image-box{
-width:min(85vw,320px);
+.caption{
+font-size:15px;
+}
+
+.quote{
+font-size:14px;
 }
 
 }
@@ -232,12 +325,17 @@ width:min(85vw,320px);
 
 <body>
 
+<div class="heart h1">❤️</div>
+<div class="heart h2">💖</div>
+<div class="heart h3">✨</div>
+<div class="heart h4">🌹</div>
+
 <div class="card">
 
 <div class="left">
 
 <div class="tag">
-❤️ Chapter 2
+❤️ Birthday Chapter 2
 </div>
 
 <h1>
@@ -245,30 +343,110 @@ The Day Everything
 <span class="name">Changed</span>
 </h1>
 
-<p class="story">
-There are moments in life that seem ordinary when they happen,
-but later become unforgettable.
-Meeting you was one of those moments.
-I didn't know then that one conversation,
-one smile,
-one person,
-would become so important to me.
+<p class="story-intro">
+The beginning of a story I never saw coming...
 </p>
 
 <div class="memory-box">
-<h3>💌 My Favorite Memory</h3>
+
+<h3>💌 Our Story</h3>
+
 <p>
-The day we started talking, I had no idea that you would become someone I would think about every day.
-Little by little, you became a part of my world.
-And honestly, it's one of the best things that ever happened to me.
+Back in 2022, I was alone.
 </p>
+
+<p>
+Life was moving on, days were passing,
+and I never imagined that someone would enter my life
+and become this important to me.
+</p>
+
+<p>
+Then one random day,
+something happened that completely changed everything.
+</p>
+
+<p>
+Someone added me to a group chat.
+</p>
+
+<p>
+And there you were.
+</p>
+
+<p>
+Just a random girl in a random GC.
+</p>
+
+<p>
+At first, I never thought much about it.
+We talked, joked around, and yes...
+I used to flirt with you sometimes.
+</p>
+
+<p>
+To me, it was just another conversation.
+Just another person on the internet.
+</p>
+
+<p>
+But little did I know,
+life was quietly writing the most beautiful chapter of my story.
+</p>
+
+<p>
+Days became weeks.
+Weeks became months.
+</p>
+
+<p>
+Somehow your messages became the ones I looked forward to the most.
+</p>
+
+<p>
+Your smile became my favourite sight.
+Your happiness started mattering to me.
+Your presence became a part of my daily life.
+</p>
+
+<p>
+I never knew that one day
+I would be so deeply in love with you.
+</p>
+
+<p>
+Looking back now,
+I am thankful to that random person
+who added me to your GC.
+</p>
+
+<p>
+Because if that never happened,
+our paths might never have crossed.
+</p>
+
+<p>
+And I would never have met
+the girl who changed my life forever.
+</p>
+
+<p class="highlight">
+Somewhere between random messages,
+silly conversations,
+late-night chats,
+and countless memories...
+I fell in love with you. ❤️
+</p>
+
 </div>
 
 <div class="timeline">
-<div>✨ First Conversation</div>
-<div>😊 First Smile</div>
-<div>❤️ First Feelings</div>
-<div>🌹 Countless Beautiful Memories</div>
+<div>✨ 2022 — Added To A Random GC</div>
+<div>😊 Started Talking</div>
+<div>😂 Endless Conversations</div>
+<div>🌙 Late Night Chats</div>
+<div>❤️ Feelings Started Growing</div>
+<div>💖 Fell In Love With You</div>
 </div>
 
 <a href="birthday3.html" class="btn">
@@ -279,18 +457,18 @@ Continue Our Journey ➜
 
 <div class="right">
 
-<div>
+<div class="image-wrapper">
 
 <div class="image-box">
-<img src="Image2.jpg" alt="Memory">
+<img src="Image2.jpg" alt="Our Story">
 </div>
 
 <div class="caption">
-A memory I'll always cherish ❤️
+The random girl who became my whole world ❤️
 </div>
 
 <div class="quote">
-"Some people arrive and make everything better."
+"Sometimes the best things in life begin with complete randomness."
 </div>
 
 </div>
