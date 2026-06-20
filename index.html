@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<title>Happy Birthday My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,183 +14,72 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-height:100vh;
-background:linear-gradient(
-135deg,
-#0f172a,
-#1e1b4b,
-#4c1d95,
-#831843
-);
-overflow:hidden;
+font-family:'Poppins',sans-serif;
+min-height:100dvh;
+overflow-x:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
+padding:20px;
+background:
+linear-gradient(
+135deg,
+#09090f,
+#1a1038,
+#3a185f,
+#5d164b
+);
 position:relative;
 }
+
+/* Background Glow */
 
 body::before{
 content:"";
 position:absolute;
-width:600px;
-height:600px;
-background:#ff4d8d;
+width:700px;
+height:700px;
+background:#ff4f9a;
 filter:blur(250px);
-opacity:.25;
-top:-200px;
-right:-100px;
+opacity:.18;
+top:-250px;
+right:-200px;
+z-index:0;
 }
 
 body::after{
 content:"";
 position:absolute;
-width:500px;
-height:500px;
+width:600px;
+height:600px;
 background:#8b5cf6;
 filter:blur(220px);
-opacity:.25;
-bottom:-200px;
-left:-100px;
+opacity:.15;
+bottom:-250px;
+left:-150px;
+z-index:0;
 }
 
-.card{
-width:90%;
-max-width:1100px;
-height:80vh;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.15);
-border-radius:30px;
-display:flex;
-overflow:hidden;
-box-shadow:0 25px 50px rgba(0,0,0,.4);
-z-index:10;
-}
-
-.left{
-flex:1;
-padding:60px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-}
-
-.right{
-flex:1;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:30px;
-position:relative;
-}
-
-.tag{
-display:inline-block;
-padding:10px 20px;
-border-radius:50px;
-background:rgba(255,255,255,.1);
-color:#fff;
-font-size:14px;
-margin-bottom:25px;
-width:max-content;
-}
-
-h1{
-font-size:65px;
-line-height:1;
-color:white;
-margin-bottom:20px;
-}
-
-.name{
-color:#ff7eb3;
-font-family:'Dancing Script',cursive;
-}
-
-.subtitle{
-font-size:22px;
-color:#ffd6e8;
-margin-bottom:25px;
-}
-
-.text{
-color:rgba(255,255,255,.85);
-line-height:1.9;
-font-size:17px;
-max-width:520px;
-}
-
-.love{
-margin-top:25px;
-padding:20px;
-background:rgba(255,255,255,.06);
-border-radius:20px;
-border:1px solid rgba(255,255,255,.1);
-color:white;
-font-style:italic;
-}
-
-.btn{
-margin-top:30px;
-display:inline-block;
-padding:16px 32px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-background:linear-gradient(
-135deg,
-#ff4d8d,
-#ff8a65
-);
-color:white;
-transition:.4s;
-width:max-content;
-}
-
-.btn:hover{
-transform:translateY(-4px) scale(1.03);
-}
-
-.image-box{
-width:370px;
-height:500px;
-border-radius:25px;
-overflow:hidden;
-box-shadow:0 20px 50px rgba(0,0,0,.4);
-position:relative;
-}
-
-.image-box img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:.6s;
-}
-
-.image-box:hover img{
-transform:scale(1.08);
-}
-
-.caption{
-margin-top:15px;
-color:white;
-text-align:center;
-font-size:16px;
-}
+/* Floating Hearts */
 
 .heart{
 position:absolute;
-font-size:30px;
-animation:float 4s ease-in-out infinite;
+font-size:28px;
+animation:float 5s ease-in-out infinite;
+z-index:1;
+opacity:.8;
 }
 
 .h1{
 top:10%;
-left:10%;
+left:8%;
 }
 
 .h2{
@@ -199,14 +89,14 @@ animation-delay:1s;
 }
 
 .h3{
-bottom:15%;
-left:15%;
+bottom:18%;
+left:12%;
 animation-delay:2s;
 }
 
 .h4{
 bottom:10%;
-right:20%;
+right:15%;
 animation-delay:3s;
 }
 
@@ -219,29 +109,227 @@ transform:translateY(-20px);
 }
 }
 
-@media(max-width:900px){
+/* Card */
 
 .card{
-flex-direction:column;
-height:auto;
-margin:20px;
+position:relative;
+z-index:10;
+width:min(1200px,100%);
+min-height:700px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.12);
+border-radius:32px;
+overflow:hidden;
+display:flex;
+box-shadow:0 30px 60px rgba(0,0,0,.4);
 }
+
+/* Left */
 
 .left{
-padding:35px;
+flex:1;
+padding:60px;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
-.right{
-padding-bottom:40px;
+.tag{
+display:inline-block;
+padding:10px 18px;
+border-radius:999px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+color:white;
+font-size:14px;
+margin-bottom:25px;
+width:max-content;
 }
 
 h1{
-font-size:45px;
+font-size:clamp(3rem,6vw,5.5rem);
+line-height:1;
+color:white;
+margin-bottom:20px;
+}
+
+.name{
+font-family:'Dancing Script',cursive;
+color:#ff77b7;
+}
+
+.subtitle{
+font-size:clamp(1.1rem,2vw,1.5rem);
+color:#ffd9ea;
+margin-bottom:25px;
+}
+
+.text{
+font-size:clamp(.95rem,1.4vw,1.1rem);
+line-height:2;
+color:rgba(255,255,255,.85);
+max-width:550px;
+}
+
+.love-box{
+margin-top:25px;
+padding:22px;
+border-radius:20px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.1);
+}
+
+.love-box h3{
+color:#ffd166;
+margin-bottom:10px;
+}
+
+.love-box p{
+color:white;
+line-height:1.8;
+}
+
+.btn{
+margin-top:30px;
+display:inline-flex;
+justify-content:center;
+align-items:center;
+padding:16px 30px;
+background:linear-gradient(
+135deg,
+#ff4f9a,
+#ff7b54
+);
+color:white;
+font-weight:600;
+text-decoration:none;
+border-radius:50px;
+transition:.4s;
+width:max-content;
+}
+
+.btn:hover{
+transform:translateY(-4px) scale(1.03);
+}
+
+/* Right */
+
+.right{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px;
+}
+
+.image-wrapper{
+text-align:center;
 }
 
 .image-box{
-width:280px;
-height:380px;
+width:min(100%,420px);
+aspect-ratio:4/5;
+overflow:hidden;
+border-radius:28px;
+position:relative;
+box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+
+.image-box::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+to top,
+rgba(0,0,0,.35),
+transparent
+);
+}
+
+.image-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.8s;
+}
+
+.image-box:hover img{
+transform:scale(1.08);
+}
+
+.caption{
+margin-top:18px;
+color:white;
+font-size:17px;
+}
+
+.quote{
+margin-top:12px;
+font-style:italic;
+color:rgba(255,255,255,.75);
+max-width:350px;
+}
+
+/* Mobile */
+
+@media(max-width:1024px){
+
+.card{
+flex-direction:column;
+}
+
+.left{
+order:2;
+text-align:center;
+align-items:center;
+padding:40px;
+}
+
+.right{
+order:1;
+padding:35px;
+}
+
+.text{
+max-width:100%;
+}
+
+}
+
+@media(max-width:768px){
+
+body{
+padding:15px;
+}
+
+.card{
+border-radius:24px;
+}
+
+.left{
+padding:25px;
+}
+
+.right{
+padding:25px;
+}
+
+.image-box{
+width:min(85vw,320px);
+}
+
+.btn{
+width:100%;
+}
+
+.caption{
+font-size:15px;
+}
+
+.quote{
+font-size:14px;
 }
 
 }
@@ -250,6 +338,11 @@ height:380px;
 </head>
 
 <body>
+
+<div class="heart h1">❤️</div>
+<div class="heart h2">💖</div>
+<div class="heart h3">✨</div>
+<div class="heart h4">🌹</div>
 
 <div class="card">
 
@@ -265,18 +358,27 @@ Happy Birthday<br>
 </h1>
 
 <p class="subtitle">
-Today is my favorite day of the year.
+Today is my favourite day of the year.
 </p>
 
 <p class="text">
-Because today is the day the most beautiful girl came into this world.
-The girl who makes my heart smile, my days brighter, and my life more meaningful.
+Because today is the day the most beautiful soul came into this world.
+The girl whose smile can brighten my darkest days,
+whose voice feels like comfort,
+and whose presence makes life feel complete.
 </p>
 
-<div class="love">
-"If I could give you one thing in life,
-it would be the ability to see yourself through my eyes.
-Then you would know how truly special you are."
+<div class="love-box">
+
+<h3>💌 A Message For You</h3>
+
+<p>
+Today isn't just your birthday.
+It's a celebration of the person who unknowingly became one of the most important parts of my life.
+Thank you for your smile, your kindness, your laughter and every beautiful moment.
+You deserve all the happiness in the world today and always.
+</p>
+
 </div>
 
 <a href="birthday2.html" class="btn">
@@ -287,19 +389,26 @@ Begin Our Story ➜
 
 <div class="right">
 
-<div class="heart h1">❤️</div>
-<div class="heart h2">✨</div>
-<div class="heart h3">💖</div>
-<div class="heart h4">🌹</div>
+<div class="image-wrapper">
 
-<div>
 <div class="image-box">
-<img src="Image1.jpg" alt="My Love">
+
+<img
+src="Image1.jpg"
+alt="My Love"
+loading="eager"
+decoding="async">
+
 </div>
 
 <div class="caption">
-The girl who changed my world ❤️
+The girl who makes my world brighter ❤️
 </div>
+
+<div class="quote">
+"Every love story is beautiful, but ours is my favourite."
+</div>
+
 </div>
 
 </div>
