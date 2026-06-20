@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,17 +17,50 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#09111f,#1b1735,#3d1f59,#671f4f);
 min-height:100vh;
 padding:30px;
 overflow-x:hidden;
+position:relative;
+}
+
+/* Background Glow */
+
+body::before{
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+background:#ff5ea8;
+filter:blur(250px);
+opacity:.12;
+top:-250px;
+left:-250px;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:#7c5cff;
+filter:blur(220px);
+opacity:.12;
+bottom:-250px;
+right:-250px;
 }
 
 .container{
 max-width:1300px;
 margin:auto;
+position:relative;
+z-index:2;
 }
 
 .header{
@@ -61,7 +95,7 @@ font-size:1.1rem;
 }
 
 .story{
-max-width:800px;
+max-width:900px;
 margin:30px auto;
 padding:25px;
 background:rgba(255,255,255,.06);
@@ -72,9 +106,11 @@ line-height:2;
 text-align:center;
 }
 
+/* Gallery */
+
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 margin-top:40px;
 }
@@ -94,9 +130,11 @@ transform:translateY(-8px);
 
 .memory img{
 width:100%;
-height:320px;
-object-fit:cover;
+height:350px;
+object-fit:contain;
+background:#111;
 display:block;
+padding:10px;
 }
 
 .memory-content{
@@ -112,9 +150,11 @@ margin-bottom:10px;
 
 .memory-text{
 color:white;
-line-height:1.8;
+line-height:1.9;
 font-size:15px;
 }
+
+/* Final Note */
 
 .final-note{
 margin-top:50px;
@@ -128,18 +168,30 @@ text-align:center;
 .final-note p{
 color:white;
 line-height:2;
+font-size:16px;
 }
 
 .btn{
 display:inline-block;
 margin-top:25px;
 padding:16px 32px;
-background:linear-gradient(135deg,#ff4f9a,#ff7b54);
+background:linear-gradient(
+135deg,
+#ff4f9a,
+#ff7b54
+);
 border-radius:50px;
 text-decoration:none;
 color:white;
 font-weight:600;
+transition:.4s;
 }
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+/* Mobile */
 
 @media(max-width:768px){
 
@@ -148,13 +200,18 @@ padding:15px;
 }
 
 .memory img{
-height:260px;
+height:280px;
+}
+
+.gallery{
+grid-template-columns:1fr;
 }
 
 }
 
 </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -171,74 +228,137 @@ Our Beautiful
 </h1>
 
 <p class="subtitle">
-Every memory with you became a favorite memory.
+Some memories are too precious to stay only in our hearts.
 </p>
 
 </div>
 
 <div class="story">
 
-Sometimes I wish I could pause time.
+Every memory on this page tells a story.
 
-Not because I want life to stop.
+Some made us laugh.
 
-But because I want to stay a little longer in the moments we've shared together.
+Some made us emotional.
 
-The laughs.
+Some were completely random.
 
-The late-night conversations.
+But every single one of them became special because you were part of it.
 
-The random arguments.
-
-The silly jokes.
-
-The moments that probably seemed ordinary then...
-
-but became unforgettable later.
+❤️
 
 </div>
 
 <div class="gallery">
 
-<div class="memory">
-<img src="Image4.jpg" alt="">
-<div class="memory-content">
-<div class="memory-title">✨ Our Beginning</div>
-<div class="memory-text">
-The moment our story quietly started.
-</div>
-</div>
-</div>
+<!-- Memory 1 -->
 
 <div class="memory">
-<img src="Image5.jpg" alt="">
+
+<img src="Image4.jpg" alt="Birthday Gift">
+
 <div class="memory-content">
-<div class="memory-title">😂 Endless Laughter</div>
-<div class="memory-text">
-The moments where we laughed so much that nothing else mattered.
-</div>
-</div>
+
+<div class="memory-title">
+🎁 Your First Birthday Gift To Me
 </div>
 
-<div class="memory">
-<img src="Image6.jpg" alt="">
-<div class="memory-content">
-<div class="memory-title">🌙 Late Night Talks</div>
 <div class="memory-text">
-Some of my favorite memories are simply talking to you.
-</div>
-</div>
+I still remember this gift.
+
+Not because it was expensive.
+
+Not because it was fancy.
+
+But because it came from you.
+
+And somehow that made it priceless. ❤️
 </div>
 
+</div>
+
+</div>
+
+<!-- Memory 2 -->
+
 <div class="memory">
-<img src="Image7.jpg" alt="">
+
+<img src="Image5.jpg" alt="Funny Memory">
+
 <div class="memory-content">
-<div class="memory-title">❤️ Us</div>
+
+<div class="memory-title">
+😂 Peak Freaky Era
+</div>
+
 <div class="memory-text">
-No special occasion needed.
-You became special enough on your own.
+Your efforts in searching ashleel videos for me. 😭
+
+Back then you were absolutely freaky.
+
+Looking back now, I still can't believe the things we used to talk about.
+
+But honestly...
+
+those are some of the funniest memories I have with you.
 </div>
+
 </div>
+
+</div>
+
+<!-- Memory 3 -->
+
+<div class="memory">
+
+<img src="Image6.jpg" alt="Long Gap">
+
+<div class="memory-content">
+
+<div class="memory-title">
+😭 The First Long Gap
+</div>
+
+<div class="memory-text">
+The first time you disappeared for a long time.
+
+I'm not even joking.
+
+Meri G phatt gayi thi.
+
+That's when I realised how much I had gotten used to talking to you every day.
+
+And how much your presence mattered to me.
+</div>
+
+</div>
+
+</div>
+
+<!-- Memory 4 -->
+
+<div class="memory">
+
+<img src="Image7.jpg" alt="Text Message">
+
+<div class="memory-content">
+
+<div class="memory-title">
+📱 Your Text = Instant Happiness
+</div>
+
+<div class="memory-text">
+No matter how bad my day was.
+
+No matter how stressed I was.
+
+Seeing your notification instantly made everything better.
+
+You became my favourite text to receive. ❤️
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -246,17 +366,25 @@ You became special enough on your own.
 <div class="final-note">
 
 <p>
-Every memory on this page tells a story.
 
-But my favorite part isn't the memory itself.
+Every memory on this page is different.
 
-It's the fact that you were in it.
+Some are romantic.
 
-Thank you for every moment, every smile, every conversation and every memory.
+Some are funny.
 
-And trust me...
+Some are embarrassing.
 
-the best memories are still waiting for us. ❤️
+Some are emotional.
+
+But every single one of them reminds me of one thing...
+
+Life became a lot more interesting after you entered it.
+
+And if these are the memories we've already created,
+
+I can't wait to see the memories we're still going to create together. ❤️
+
 </p>
 
 <a href="birthday5.html" class="btn">
@@ -269,3 +397,4 @@ Things You Changed In Me ➜
 
 </body>
 </html>
+```
