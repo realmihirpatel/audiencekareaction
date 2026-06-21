@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A Letter For You ❤️</title>
+<title>Birthday Chapter 8 ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -20,14 +20,85 @@ box-sizing:border-box;
 body{
 font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#0b1020,#1e1738,#44205f,#6d1f4e);
-min-height:100vh;
+min-height:100dvh;
 padding:20px;
 display:flex;
 justify-content:center;
 align-items:center;
+overflow-x:hidden;
+position:relative;
+}
+
+/* Background Glow */
+
+body::before{
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+background:#ff5ea8;
+filter:blur(250px);
+opacity:.12;
+top:-250px;
+left:-250px;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:#7c5cff;
+filter:blur(220px);
+opacity:.12;
+bottom:-250px;
+right:-250px;
+}
+
+/* Floating Hearts */
+
+.heart{
+position:absolute;
+font-size:28px;
+opacity:.6;
+animation:float 5s ease-in-out infinite;
+}
+
+.h1{
+top:10%;
+left:8%;
+}
+
+.h2{
+top:20%;
+right:10%;
+animation-delay:1s;
+}
+
+.h3{
+bottom:15%;
+left:12%;
+animation-delay:2s;
+}
+
+.h4{
+bottom:10%;
+right:15%;
+animation-delay:3s;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-20px);
+}
 }
 
 .container{
+position:relative;
+z-index:2;
 width:min(950px,100%);
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(20px);
@@ -67,9 +138,21 @@ border-radius:25px;
 
 .letter p{
 color:white;
-line-height:2.2;
+line-height:2.1;
 margin-bottom:20px;
 font-size:16px;
+}
+
+.opening{
+font-size:22px !important;
+font-weight:600;
+color:#ffd166 !important;
+}
+
+.ending{
+font-size:18px !important;
+font-weight:600;
+color:#ff8fc8 !important;
 }
 
 .signature{
@@ -77,27 +160,96 @@ margin-top:30px;
 font-family:'Dancing Script',cursive;
 font-size:40px;
 color:#ff8fc8;
+line-height:1.3;
 }
 
 .btn{
 display:inline-block;
 margin-top:30px;
 padding:16px 32px;
-background:linear-gradient(135deg,#ff4f9a,#ff7b54);
+background:linear-gradient(
+135deg,
+#ff4f9a,
+#ff7b54
+);
 border-radius:50px;
 text-decoration:none;
 color:white;
 font-weight:600;
+transition:.3s;
 }
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+/* Tablet */
 
 @media(max-width:768px){
 
+body{
+padding:12px;
+align-items:flex-start;
+}
+
 .container{
-padding:25px;
+padding:22px;
+border-radius:24px;
+margin-top:10px;
+margin-bottom:10px;
+}
+
+h1{
+font-size:2.4rem;
+line-height:1.1;
 }
 
 .letter{
 padding:20px;
+border-radius:18px;
+}
+
+.letter p{
+font-size:15px;
+line-height:1.9;
+margin-bottom:16px;
+}
+
+.signature{
+font-size:32px;
+}
+
+.btn{
+width:100%;
+display:block;
+text-align:center;
+}
+
+}
+
+/* Small Phones */
+
+@media(max-width:480px){
+
+.container{
+padding:18px;
+}
+
+h1{
+font-size:2rem;
+}
+
+.letter{
+padding:16px;
+}
+
+.letter p{
+font-size:14px;
+line-height:1.8;
+}
+
+.signature{
+font-size:28px;
 }
 
 }
@@ -106,6 +258,11 @@ padding:20px;
 </head>
 
 <body>
+
+<div class="heart h1">❤️</div>
+<div class="heart h2">💖</div>
+<div class="heart h3">✨</div>
+<div class="heart h4">🌹</div>
 
 <div class="container">
 
@@ -120,13 +277,13 @@ A Letter
 
 <div class="letter">
 
-<p>
-Dear You,
+<p class="opening">
+Dear My Favourite Person ❤️,
 </p>
 
 <p>
 If you've reached this page, then you've already travelled through our story.
-You've seen how we met, how I slowly fell for you, the memories we've created, and the dreams I have for our future.
+You've seen how we met, how I slowly fell for you, the memories we've created, the way you changed my life, and the dreams I have for our future.
 </p>
 
 <p>
@@ -144,25 +301,41 @@ Thank you for making me smile on days when I didn't even feel like smiling.
 </p>
 
 <p>
-You came into my life when I least expected it.
-A random group chat.
-A random conversation.
-A random girl.
+Back in 2022, I was just a guy in a random group chat.
+You were just a random girl in that same group chat.
 </p>
 
 <p>
-And somehow that random girl became one of the most important people in my life.
+Neither of us knew that years later we'd be standing here, with me writing an entire website dedicated to you.
 </p>
 
 <p>
-Sometimes I wonder what would've happened if that person had never added me to that group.
-Would we ever have met?
-Would we ever have talked?
-Would I ever have known someone as special as you?
+Life is funny like that.
 </p>
 
 <p>
-I honestly don't know.
+One random invite.
+One random conversation.
+One random message.
+</p>
+
+<p>
+And suddenly someone becomes one of the most important people in your life.
+</p>
+
+<p>
+Sometimes I wonder what would've happened if that person had never added me to your GC.
+</p>
+
+<p>
+Would we have met?
+Would we have talked?
+Would I have found someone who understands me the way you do?
+</p>
+
+<p>
+Honestly...
+I don't know.
 </p>
 
 <p>
@@ -173,12 +346,18 @@ Because it gave me you.
 <p>
 You don't have to be perfect.
 You never did.
-I love you for who you are.
-The good days.
-The bad days.
-The silly moments.
-The emotional moments.
-All of it.
+</p>
+
+<p>
+I love your smile.
+I love your laugh.
+I love your weirdness.
+I love your chaos.
+I love the way you care.
+</p>
+
+<p>
+I love the little things about you that most people probably don't even notice.
 </p>
 
 <p>
@@ -192,8 +371,10 @@ More than you think.
 And definitely more than I can explain in words.
 </p>
 
-<p>
-Happy Birthday, my favourite person. ❤️
+<p class="ending">
+Happy Birthday, my favourite person.
+
+Thank you for being the best chapter of my story. ❤️
 </p>
 
 <div class="signature">
