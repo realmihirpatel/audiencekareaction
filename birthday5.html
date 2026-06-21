@@ -29,6 +29,8 @@ overflow-x:hidden;
 position:relative;
 }
 
+/* Background Glow */
+
 body::before{
 content:"";
 position:absolute;
@@ -56,7 +58,7 @@ right:-250px;
 .card{
 position:relative;
 z-index:2;
-width:min(1200px,100%);
+width:min(1250px,100%);
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(18px);
 border:1px solid rgba(255,255,255,.12);
@@ -66,53 +68,59 @@ display:flex;
 box-shadow:0 25px 60px rgba(0,0,0,.45);
 }
 
-/* Left Side */
+/* VIDEO SIDE */
 
 .left{
 flex:1;
-padding:50px;
+padding:40px;
 display:flex;
 justify-content:center;
 align-items:center;
 }
 
 .video-wrapper{
-text-align:center;
 width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
 .video-box{
-width:min(100%,420px);
-margin:auto;
-border-radius:25px;
+width:min(100%,380px);
+aspect-ratio:9/16;
 overflow:hidden;
-box-shadow:0 20px 50px rgba(0,0,0,.4);
+border-radius:28px;
 background:#000;
+box-shadow:0 25px 60px rgba(0,0,0,.45);
+border:1px solid rgba(255,255,255,.08);
 }
 
 .video-box video{
 width:100%;
+height:100%;
+object-fit:cover;
 display:block;
-max-height:650px;
-object-fit:contain;
 background:#000;
 }
 
 .caption{
-margin-top:15px;
-text-align:center;
+margin-top:18px;
+font-size:18px;
 color:white;
-font-size:17px;
+text-align:center;
+font-weight:600;
 }
 
 .quote{
 margin-top:10px;
-text-align:center;
+font-size:15px;
 font-style:italic;
 color:rgba(255,255,255,.75);
+text-align:center;
+max-width:320px;
 }
 
-/* Right Side */
+/* TEXT SIDE */
 
 .right{
 flex:1;
@@ -223,16 +231,12 @@ text-align:center;
 }
 
 .tag{
-margin-left:auto;
-margin-right:auto;
+margin:auto;
+margin-bottom:20px;
 }
 
 .btn{
 width:100%;
-}
-
-.video-box{
-width:min(100%,500px);
 }
 
 }
@@ -249,7 +253,7 @@ padding:20px;
 }
 
 .video-box{
-width:100%;
+width:min(90vw,340px);
 }
 
 h1{
@@ -273,15 +277,22 @@ font-size:2.8rem;
 
 <div class="video-box">
 
-<video controls playsinline preload="metadata">
+<video
+autoplay
+loop
+muted
+playsinline
+webkit-playsinline
+preload="auto">
+
 <source src="Video1.mp4" type="video/mp4">
-Your browser does not support video playback.
+
 </video>
 
 </div>
 
 <div class="caption">
-A special message for the girl who changed my life ❤️
+❤️ A Special Message For You ❤️
 </div>
 
 <div class="quote">
@@ -306,7 +317,7 @@ How You
 </h1>
 
 <p class="subtitle">
-You probably don't even realize how much.
+You probably don't even realize how much you've changed my life.
 </p>
 
 <div class="change">
@@ -328,7 +339,7 @@ Whenever something bad happened, I wanted to talk to you.
 <div class="change">
 <h3>🌙 You Became Part Of My Daily Life</h3>
 <p>
-Talking to you stopped being a habit and became something I genuinely looked forward to.
+Talking to you stopped being a habit and became something I genuinely looked forward to every day.
 </p>
 </div>
 
