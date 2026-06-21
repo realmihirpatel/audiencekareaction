@@ -26,9 +26,36 @@ display:flex;
 justify-content:center;
 align-items:center;
 overflow-x:hidden;
+position:relative;
+}
+
+body::before{
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+background:#ff5ea8;
+filter:blur(250px);
+opacity:.12;
+top:-250px;
+left:-250px;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:#7c5cff;
+filter:blur(220px);
+opacity:.12;
+bottom:-250px;
+right:-250px;
 }
 
 .card{
+position:relative;
+z-index:2;
 width:min(1200px,100%);
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(18px);
@@ -39,6 +66,8 @@ display:flex;
 box-shadow:0 25px 60px rgba(0,0,0,.45);
 }
 
+/* Left Side */
+
 .left{
 flex:1;
 padding:50px;
@@ -47,26 +76,50 @@ justify-content:center;
 align-items:center;
 }
 
+.video-wrapper{
+text-align:center;
+width:100%;
+}
+
+.video-box{
+width:min(100%,420px);
+margin:auto;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+background:#000;
+}
+
+.video-box video{
+width:100%;
+display:block;
+max-height:650px;
+object-fit:contain;
+background:#000;
+}
+
+.caption{
+margin-top:15px;
+text-align:center;
+color:white;
+font-size:17px;
+}
+
+.quote{
+margin-top:10px;
+text-align:center;
+font-style:italic;
+color:rgba(255,255,255,.75);
+}
+
+/* Right Side */
+
 .right{
 flex:1;
 padding:50px;
 display:flex;
 flex-direction:column;
 justify-content:center;
-}
-
-.image-box{
-width:min(100%,420px);
-aspect-ratio:4/5;
-overflow:hidden;
-border-radius:25px;
-box-shadow:0 20px 50px rgba(0,0,0,.4);
-}
-
-.image-box img{
-width:100%;
-height:100%;
-object-fit:cover;
 }
 
 .tag{
@@ -133,26 +186,24 @@ line-height:2;
 display:inline-block;
 margin-top:25px;
 padding:16px 32px;
-background:linear-gradient(135deg,#ff4f9a,#ff7b54);
+background:linear-gradient(
+135deg,
+#ff4f9a,
+#ff7b54
+);
 border-radius:50px;
 text-decoration:none;
 color:white;
 font-weight:600;
+transition:.4s;
 width:max-content;
 }
 
-.caption{
-margin-top:15px;
-text-align:center;
-color:white;
+.btn:hover{
+transform:translateY(-4px);
 }
 
-.quote{
-margin-top:10px;
-text-align:center;
-font-style:italic;
-color:rgba(255,255,255,.75);
-}
+/* Responsive */
 
 @media(max-width:1024px){
 
@@ -162,15 +213,47 @@ flex-direction:column;
 
 .left{
 order:1;
+padding:30px;
 }
 
 .right{
 order:2;
+padding:30px;
 text-align:center;
+}
+
+.tag{
+margin-left:auto;
+margin-right:auto;
 }
 
 .btn{
 width:100%;
+}
+
+.video-box{
+width:min(100%,500px);
+}
+
+}
+
+@media(max-width:768px){
+
+body{
+padding:15px;
+}
+
+.left,
+.right{
+padding:20px;
+}
+
+.video-box{
+width:100%;
+}
+
+h1{
+font-size:2.8rem;
 }
 
 }
@@ -182,25 +265,34 @@ width:100%;
 
 <div class="card">
 
+<!-- VIDEO SECTION -->
+
 <div class="left">
 
-<div>
+<div class="video-wrapper">
 
-<div class="image-box">
-<img src="Image8.jpg" alt="">
+<div class="video-box">
+
+<video controls playsinline preload="metadata">
+<source src="Video1.mp4" type="video/mp4">
+Your browser does not support video playback.
+</video>
+
 </div>
 
 <div class="caption">
-The girl who changed my life ❤️
+A special message for the girl who changed my life ❤️
 </div>
 
 <div class="quote">
-"You became my comfort without even trying."
+"Some people enter your life and quietly become your whole world."
 </div>
 
 </div>
 
 </div>
+
+<!-- TEXT SECTION -->
 
 <div class="right">
 
@@ -272,7 +364,7 @@ Thank you for changing my life in ways you'll probably never fully understand.
 </div>
 
 <a href="birthday6.html" class="btn">
-A Special Message For You ➜
+Reasons I Love You ➜
 </a>
 
 </div>
