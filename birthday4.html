@@ -1,400 +1,47 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Birthday Chapter 4 ❤️</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#09111f,#1b1735,#3d1f59,#671f4f);
-min-height:100vh;
-padding:30px;
-overflow-x:hidden;
-position:relative;
-}
-
-/* Background Glow */
-
-body::before{
-content:"";
-position:absolute;
-width:700px;
-height:700px;
-background:#ff5ea8;
-filter:blur(250px);
-opacity:.12;
-top:-250px;
-left:-250px;
-}
-
-body::after{
-content:"";
-position:absolute;
-width:600px;
-height:600px;
-background:#7c5cff;
-filter:blur(220px);
-opacity:.12;
-bottom:-250px;
-right:-250px;
-}
-
-.container{
-max-width:1300px;
-margin:auto;
-position:relative;
-z-index:2;
-}
-
-.header{
-text-align:center;
-margin-bottom:50px;
-}
-
-.tag{
-display:inline-block;
-padding:10px 18px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.12);
-border-radius:999px;
-color:white;
-margin-bottom:20px;
-}
-
-h1{
-font-size:clamp(3rem,6vw,5rem);
-color:white;
-}
-
-.highlight{
-font-family:'Dancing Script',cursive;
-color:#ff8fc8;
-}
-
-.subtitle{
-margin-top:15px;
-color:#ffd8eb;
-font-size:1.1rem;
-}
-
-.story{
-max-width:900px;
-margin:30px auto;
-padding:25px;
-background:rgba(255,255,255,.06);
-border-radius:20px;
-border:1px solid rgba(255,255,255,.1);
-color:white;
-line-height:2;
-text-align:center;
-}
-
-/* Gallery */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-margin-top:40px;
-}
-
-.memory{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.1);
-border-radius:24px;
-overflow:hidden;
-transition:.4s;
-}
-
-.memory:hover{
-transform:translateY(-8px);
-}
-
-.memory img{
-width:100%;
-height:350px;
-object-fit:contain;
-background:#111;
-display:block;
-padding:10px;
-}
-
-.memory-content{
-padding:20px;
-}
-
-.memory-title{
-font-size:20px;
-font-weight:600;
-color:#ffd166;
-margin-bottom:10px;
-}
-
-.memory-text{
-color:white;
-line-height:1.9;
-font-size:15px;
-}
-
-/* Final Note */
-
-.final-note{
-margin-top:50px;
-padding:30px;
-background:rgba(255,255,255,.06);
-border-radius:24px;
-border:1px solid rgba(255,255,255,.1);
-text-align:center;
-}
-
-.final-note p{
-color:white;
-line-height:2;
-font-size:16px;
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:16px 32px;
-background:linear-gradient(
-135deg,
-#ff4f9a,
-#ff7b54
-);
-border-radius:50px;
-text-decoration:none;
-color:white;
-font-weight:600;
-transition:.4s;
-}
-
-.btn:hover{
-transform:translateY(-4px);
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-body{
-padding:15px;
-}
-
-.memory img{
-height:280px;
-}
-
-.gallery{
-grid-template-columns:1fr;
-}
-
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<div class="container">
-
-<div class="header">
-
-<div class="tag">
-📸 Birthday Chapter 4
+<div class="heart h1">❤️</div><div class="heart h2">💖</div><div class="heart h3">✨</div><div class="heart h4">🌹</div>
+<div class="card" style="display:block;">
+  <div style="padding:60px;" class="header-section">
+    <div class="tag">📸 Birthday Chapter 4</div>
+    <h1 style="text-align:center;">Our Beautiful<br><span class="name">Memories</span></h1>
+    <p class="subtitle" style="text-align:center;">Every memory matters when it's with the right person.</p>
+    <div class="section-box" style="max-width:900px;margin:28px auto 0;">
+      <p>Some moments were funny. Some were random. Some were embarrassing. But all of them became special because you were there.</p>
+    </div>
+  </div>
+  <div style="padding:0 40px 40px;">
+    <div class="gallery">
+      <div class="memory">
+        <img src="Image4.jpg" alt="Memory 1">
+        <div class="memory-content"><div class="memory-title">🎁 Your First Birthday Gift To Me</div><div class="memory-text">I still remember this. Not because it was expensive — because it came from you. That alone made it priceless.</div></div>
+      </div>
+      <div class="memory">
+        <img src="Image5.jpg" alt="Memory 2">
+        <div class="memory-content"><div class="memory-title">😂 Peak Freaky Era</div><div class="memory-text">Your efforts in searching ashleel videos for me. Back then you were absolutely freaky and honestly, it was hilarious.</div></div>
+      </div>
+      <div class="memory">
+        <img src="Image6.jpg" alt="Memory 3">
+        <div class="memory-content"><div class="memory-title">😭 The First Long Gap</div><div class="memory-text">The first time you disappeared for a long time. I'm not even joking — meri G phatt gayi thi.</div></div>
+      </div>
+      <div class="memory">
+        <img src="Image7.jpg" alt="Memory 4">
+        <div class="memory-content"><div class="memory-title">📱 Your Text = Instant Happiness</div><div class="memory-text">No matter how bad my day was, seeing your notification instantly made things better.</div></div>
+      </div>
+    </div>
+    <div class="final-note">
+      <p>Every memory on this page is different. Some are sweet, some are chaotic, some are embarrassing. But every one of them reminds me that life got a lot more interesting after you entered it.</p>
+    </div>
+    <div style="text-align:center;"><a href="birthday5.html" class="btn">How You Changed Me ➜</a></div>
+  </div>
 </div>
-
-<h1>
-Our Beautiful
-<span class="highlight">Memories</span>
-</h1>
-
-<p class="subtitle">
-Some memories are too precious to stay only in our hearts.
-</p>
-
-</div>
-
-<div class="story">
-
-Every memory on this page tells a story.
-
-Some made us laugh.
-
-Some made us emotional.
-
-Some were completely random.
-
-But every single one of them became special because you were part of it.
-
-❤️
-
-</div>
-
-<div class="gallery">
-
-<!-- Memory 1 -->
-
-<div class="memory">
-
-<img src="Image4.jpg" alt="Birthday Gift">
-
-<div class="memory-content">
-
-<div class="memory-title">
-🎁 Your First Birthday Gift To Me
-</div>
-
-<div class="memory-text">
-I still remember this gift.
-
-Not because it was expensive.
-
-Not because it was fancy.
-
-But because it came from you.
-
-And somehow that made it priceless. ❤️
-</div>
-
-</div>
-
-</div>
-
-<!-- Memory 2 -->
-
-<div class="memory">
-
-<img src="Image5.jpg" alt="Funny Memory">
-
-<div class="memory-content">
-
-<div class="memory-title">
-😂 Peak Freaky Era
-</div>
-
-<div class="memory-text">
-Your efforts in searching ashleel videos for me. 😭
-
-Back then you were absolutely freaky.
-
-Looking back now, I still can't believe the things we used to talk about.
-
-But honestly...
-
-those are some of the funniest memories I have with you.
-</div>
-
-</div>
-
-</div>
-
-<!-- Memory 3 -->
-
-<div class="memory">
-
-<img src="Image6.jpg" alt="Long Gap">
-
-<div class="memory-content">
-
-<div class="memory-title">
-😭 The First Long Gap
-</div>
-
-<div class="memory-text">
-The first time you disappeared for a long time.
-
-I'm not even joking.
-
-Meri G phatt gayi thi.
-
-That's when I realised how much I had gotten used to talking to you every day.
-
-And how much your presence mattered to me.
-</div>
-
-</div>
-
-</div>
-
-<!-- Memory 4 -->
-
-<div class="memory">
-
-<img src="Image7.jpg" alt="Text Message">
-
-<div class="memory-content">
-
-<div class="memory-title">
-📱 Your Text = Instant Happiness
-</div>
-
-<div class="memory-text">
-No matter how bad my day was.
-
-No matter how stressed I was.
-
-Seeing your notification instantly made everything better.
-
-You became my favourite text to receive. ❤️
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="final-note">
-
-<p>
-
-Every memory on this page is different.
-
-Some are romantic.
-
-Some are funny.
-
-Some are embarrassing.
-
-Some are emotional.
-
-But every single one of them reminds me of one thing...
-
-Life became a lot more interesting after you entered it.
-
-And if these are the memories we've already created,
-
-I can't wait to see the memories we're still going to create together. ❤️
-
-</p>
-
-<a href="birthday5.html" class="btn">
-Things You Changed In Me ➜
-</a>
-
-</div>
-
-</div>
-
 </body>
 </html>
-```
