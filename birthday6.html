@@ -25,10 +25,37 @@ display:flex;
 justify-content:center;
 align-items:center;
 padding:20px;
-overflow:hidden;
+overflow-x:hidden;
+position:relative;
+}
+
+body::before{
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+background:#ff5ea8;
+filter:blur(250px);
+opacity:.12;
+top:-250px;
+left:-250px;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:#7c5cff;
+filter:blur(220px);
+opacity:.12;
+bottom:-250px;
+right:-250px;
 }
 
 .card{
+position:relative;
+z-index:2;
 width:min(900px,100%);
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(20px);
@@ -62,6 +89,7 @@ color:#ff8fc8;
 .subtitle{
 color:#ffd8ea;
 margin-bottom:40px;
+line-height:1.8;
 }
 
 .reason-box{
@@ -69,7 +97,7 @@ background:rgba(255,255,255,.05);
 border:1px solid rgba(255,255,255,.1);
 padding:40px;
 border-radius:25px;
-min-height:220px;
+min-height:260px;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -80,6 +108,7 @@ flex-direction:column;
 font-size:20px;
 color:#ffd166;
 margin-bottom:15px;
+font-weight:600;
 }
 
 .reason-text{
@@ -111,6 +140,12 @@ color:white;
 font-weight:600;
 cursor:pointer;
 text-decoration:none;
+transition:.3s;
+}
+
+button:hover,
+.next-page:hover{
+transform:translateY(-3px);
 }
 
 .next-page{
@@ -125,6 +160,16 @@ padding:25px;
 
 .reason-text{
 font-size:22px;
+}
+
+.reason-box{
+min-height:220px;
+padding:25px;
+}
+
+button,
+.next-page{
+width:100%;
 }
 
 }
@@ -146,8 +191,8 @@ Reasons I
 </h1>
 
 <p class="subtitle">
-There are hundreds of reasons.
-Here are just a few...
+There are hundreds of reasons why I love you.
+These are just a few of them. ❤️
 </p>
 
 <div class="reason-box">
@@ -164,7 +209,7 @@ Your smile can fix a bad day.
 
 <div class="buttons">
 
-<button onclick="nextReason()">
+<button id="nextBtn" onclick="nextReason()">
 Next Reason ➜
 </button>
 
@@ -234,20 +279,28 @@ const reasons = [
 
 let current = 0;
 
+const reasonElement = document.getElementById('reason');
+const countElement = document.getElementById('count');
+const nextBtn = document.getElementById('nextBtn');
+const finishBtn = document.getElementById('finishBtn');
+
+finishBtn.style.display = "none";
+
 function nextReason(){
+
+if(current < reasons.length - 1){
 
 current++;
 
-if(current < reasons.length){
-
-document.getElementById('reason').innerText = reasons[current];
-document.getElementById('count').innerText = `Reason #${current+1}`;
+reasonElement.innerText = reasons[current];
+countElement.innerText = `Reason #${current + 1}`;
 
 }
 
-if(current === reasons.length-1){
+if(current === reasons.length - 1){
 
-document.getElementById('finishBtn').style.display = 'inline-block';
+nextBtn.style.display = "none";
+finishBtn.style.display = "inline-block";
 
 }
 
